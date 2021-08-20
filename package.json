@@ -1,0 +1,24 @@
+{
+  "name": "markdown-it-zhihu-common",
+  "version": "1.0.0",
+  "description": "Markdown-It Plugin for Zhihu CommonMark",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jks-liu/markdown-it-zhihu-common.git"
+  },
+  "keywords": [
+    "markdown-it",
+    "zhihu",
+    "WPL/s"
+  ],
+  "author": "Jks Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jks-liu/markdown-it-zhihu-common/issues"
+  },
+  "homepage": "https://github.com/jks-liu/markdown-it-zhihu-common#readme"
+}
