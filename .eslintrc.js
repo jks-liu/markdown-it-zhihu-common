@@ -8,5 +8,6 @@ module.exports = {
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
       "plugin:node/recommended",
+      "prettier",
     ],
   };
