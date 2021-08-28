@@ -1,10 +1,12 @@
 {
   "name": "markdown-it-zhihu-common",
   "version": "1.0.0",
-  "description": "Markdown-It Plugin for Zhihu CommonMark",
-  "main": "index.js",
+  "description": "Markdown-It Plugin for Zhihu CommonMark",  
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -12,6 +14,7 @@
   },
   "keywords": [
     "markdown-it",
+    "markdown-it-plugin",
     "zhihu",
     "WPL/s"
   ],
@@ -21,6 +24,7 @@
     "url": "https://github.com/jks-liu/markdown-it-zhihu-common/issues"
   },
   "homepage": "https://github.com/jks-liu/markdown-it-zhihu-common#readme",
+  "files": ["lib/**/*"],
   "devDependencies": {
     "@types/html-minifier": "^4.0.1",
     "@types/jest": "^27.0.1",
