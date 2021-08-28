@@ -74,11 +74,6 @@ If use VS Code
 ```
 It seems format on save not work??
 
-
-
-
-
-
 # Step n: Add dependency of `markdown-it-zhihu`
 
 
