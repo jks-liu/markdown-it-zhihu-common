@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-zhihu-common",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Markdown-It Plugin for Zhihu CommonMark",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

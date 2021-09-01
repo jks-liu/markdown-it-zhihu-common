@@ -44,11 +44,11 @@ testmd("taskList", `
 testmd("reference", `
 [^1] [^2]
 
-[^1]: https://baidu.com 百度
+[^1]: https://baidu.com 百度 baidu
 [^2]: https://google.com Google
 `, `
 <p><sup
-  data-text="百度"
+  data-text="百度 baidu"
   data-url="https://baidu.com"
   data-draft-node="inline"
   data-draft-type="reference"

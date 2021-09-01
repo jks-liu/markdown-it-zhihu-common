@@ -90,9 +90,10 @@ function reference(md: MarkdownIt) {
                 const children = tokens[i].children as Token[];
                 for (let j = 0; j < children.length; j++) {
                     if (children[j].type === 'footnote_ref') {
-                        const content = (ref_list.get(children[j].meta.label as string) || "").split(" ");
-                        const site = content[0];
-                        const text = content[1] || "";
+                        const content = ref_list.get(children[j].meta.label as string) || "";
+                        const idx = content.indexOf(" ");
+                        const site = idx > 0 ? content.substring(0, idx) : content;
+                        const text = idx > 0 ? content.substring(idx + 1) : "";
                         children[j].tag = "sup";
                         children[j].attrPush(["data-text", text]);
                         children[j].attrPush(["data-url", site]);
