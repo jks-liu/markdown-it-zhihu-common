@@ -17,4 +17,7 @@
         "prettierrc",
         "todoify"
     ],
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
