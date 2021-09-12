@@ -63,3 +63,15 @@ testmd("reference", `
   >[2]</sup
 ></p>
 `)
+
+testmd("linkCard", `[![zhihu-link-card:文字](http://pic.link)](http://target.link)`, `
+<p><a
+  href="http://target.link"
+  data-draft-node="block"
+  data-draft-type="link-card"
+  data-image="http://pic.link"
+  data-image-width="640"
+  data-image-height="480"
+  >文字</a
+></p>
+`)

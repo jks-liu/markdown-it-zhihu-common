@@ -135,6 +135,49 @@ function isReferenceList(tokens: Token[], i: number) {
         tokens[i + 2].type === 'inline';
 }
 
+///
+/// Link card
+///
+function linkCard(md: MarkdownIt) {
+    md.core.ruler.after('inline', 'jks-link-card', function (state: StateCore): boolean {
+        const tokens = state.tokens;
+        
+        for (let i = 0; i < tokens.length; i++) {
+            if (tokens[i].type === 'inline' && tokens[i].children) {
+                const children = tokens[i].children as Token[];
+                for (let i = 0; i < children.length - 2; i++) {
+                    if (isLinkCard(children, i)) {
+                        children[i].attrPush(["data-draft-node", "block"]);
+                        children[i].attrPush(["data-draft-type", "link-card"]);
+                        children[i].attrPush(["data-image", children[i + 1].attrGet("src") as string]);
+                        children[i].attrPush(["data-image-width", "640"]);
+                        children[i].attrPush(["data-image-height", "480"]);
+
+                        children[i + 1].type = "text";
+                        children[i + 1].content = children[i + 1].content.slice(16);
+                    }
+                }
+            }
+        }
+
+        // Just make the type checking happy
+        return true;
+    });
+}
+
+function isLinkCard(tokens: Token[], i: number) {
+    if(!( tokens[i].type === 'link_open' &&
+        tokens[i + 1].type === 'image' &&
+        tokens[i + 2].type === 'link_close')
+    ) {
+        return false;
+    }
+
+    const text = tokens[i + 1].content;
+    return text.startsWith("zhihu-link-card:")
+
+}
+
 
 ///
 /// Exported plugin
@@ -151,4 +194,6 @@ export default function zhihu_common(md: MarkdownIt): void {
     // Support reference
     md.use(md_footnotes)
     reference(md)
+    // Support link card
+    linkCard(md)
 }

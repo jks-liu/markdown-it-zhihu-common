@@ -14,4 +14,5 @@ npm i markdown-it-zhihu-common
 - 表格
 - 任务列表
 - 参考文献
+- 链接卡片
 
